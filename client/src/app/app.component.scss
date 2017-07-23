@@ -1,0 +1,150 @@
+@import "./../styles.scss";
+
+.top-fold {
+  height: 100vh;
+  background-position: center center!important;
+  background-size: cover;
+  background-attachment: fixed!important;
+  transition: all linear .3s;
+  background: #eaeaea;
+  position: fixed;
+  width: 100%;
+  z-index: 999999;
+
+  //top view with data fetched
+  &.fetched {
+    height: 100px;
+    .form-holder {
+      top: 20px;
+      transform: translateY(0);
+      h2 {
+        display: none;
+      }
+      h3 {
+        transform:translateX(0);
+        opacity: 1;
+      }
+
+    }
+  }
+
+  //loading icon
+  .loading {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    color: #ffffff;
+  }
+
+  //form holder style
+  .form-holder {
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-100%);
+    h3 {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%) translateX(-10px);
+      opacity: 0;
+      color: #ffffff;
+      left: -220px;
+      transition: all linear .3s
+
+    }
+    h2 {
+      padding-bottom: 30px;
+      color: #ffffff;
+      font-size: rem(38);
+      font-weight: 700;
+      span {
+        display: block;
+        font-size: rem(18);
+        font-weight: 300;
+        padding-top: 10px;
+      }
+    }
+    form {
+      position: relative;
+      input[type="text"] {
+        width: 100%;
+        padding: 20px 65px 20px 20px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        font-weight: 300;
+        font-size: rem(14);
+        &:focus {
+          outline: none;
+          box-shadow:
+            0 0 30px rgba(255, 255, 255, 0.2),
+            inset 0 0 2px rgba(0,0,0,0.9);
+        }
+      }
+      button {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        border: none;
+        background: none;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+  }
+}
+
+//products styling
+.products {
+  padding-top: 100px;
+  background-color: rgba(0,0,0,0.05);
+  &__item {
+    margin-top: 30px;
+    > div {
+      font-size: rem(12);
+      background: #fff;
+      margin-bottom: rem(15);
+      height: 100%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.06);
+      .logo {
+        max-height: 100px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .price {
+        font-size: rem(16);
+        font-weight: 300;
+        text-align: center;
+        background: #4e91ce;
+        color: #fff;
+        span {
+          font-size: rem(38);
+          display: block;
+          font-weight: 500;
+        }
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          font-size: rem(12);
+          word-break: break-all;
+        }
+      }
+    }
+  }
+}
+
+
+
