@@ -6,13 +6,13 @@
   background-size: cover;
   background-attachment: fixed!important;
   background: #eaeaea;
-  position: fixed;
   width: 100%;
   z-index: 999999;
-
+  transition: all linear .3s;
   //top view with data fetched
   &.fetched {
     height: 100px;
+    position: fixed;
     .form-holder {
       top: 20px;
       transform: translateY(0);
@@ -30,7 +30,7 @@
   //loading icon
   .loading {
     position: absolute;
-    bottom: 30px;
+    bottom: rem(30);
     left: 50%;
     color: #ffffff;
   }
@@ -52,7 +52,7 @@
 
     }
     h2 {
-      padding-bottom: 30px;
+      padding-bottom: rem(30);
       color: #ffffff;
       font-size: rem(38);
       font-weight: 700;
@@ -99,10 +99,12 @@
 
 //products styling
 .products {
-  padding-top: 100px;
-  background-color: rgba(0,0,0,0.05);
+  background-color: #f2f2f2;
+  &.fetched {
+    padding-top: rem(100);
+  }
   &__item {
-    margin-top: 30px;
+    margin-top: rem(30);
     > div {
       font-size: rem(12);
       margin-bottom: rem(15);
@@ -113,7 +115,7 @@
       .left {
         padding-right: 0;
         .logo {
-          padding: 10px;
+          padding: rem(10);
           background: #fff;
           border-top: 3px solid #4e91ce;
           img {
@@ -147,6 +149,11 @@
           li {
             border-bottom: 1px solid rgba(0,0,0,0.1);
             padding: 15px 0 ;
+            text-transform: capitalize;
+            color: rgba(0,0,0,0.8);
+            strong {
+              color: rgba(0,0,0,1);
+            }
             &:last-child{
               border-bottom: none;
             }
