@@ -14,69 +14,38 @@
       <button type="submit" name="submit" value="Fetch"><i class="fa fa-search"></i></button>
     </form>
   </div>
-
   <div class="loading" *ngIf="loading"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></div>
-
 </div>
-
 
 <!-- product fetch -->
-
-<div class="container-fluid products">
-
+<section class="container-fluid products">
   <div class="row">
-
     <div class="products__item col-md-4" *ngFor="let product of products">
       <div>
-
-          <div class="col-md-6 logo" style="background-image: url('{{product.imageURL}}')">
+        <div class="row">
+          <div class="col-md-4 left">
+            <div class="logo">
+              <img src="{{product.imageURL}}" alt="">
+            </div>
+            <div class="price">
+              <span>{{product.price[0]['_']}}</span>
+              <figure>{{product.price[0]['$'].currency}}</figure>
+            </div>
           </div>
-          <div class="col-md-6 price">
-            <span>{{product.price[0]['_']}}</span>
-            {{product.price[0]['$'].currency}}
+          <div class="col-md-8 right">
+            <ul>
+              <li>Product ID:{{ product.productID }}</li>
+              <li>Name: {{product.name}}</li>
+              <li>Category: {{product.categories[0].category[0]['$'].path}}</li>
+              <li>ProductURL: {{product.productURL}}</li>
+              <li>Description: {{product.description}}</li>
+            </ul>
           </div>
-
+        </div>
       </div>
     </div>
-
-    <!--<div class="products__item col-md-4" *ngFor="let product of products">
-
-      <div>
-        <ul>
-          <li>
-            Product ID:{{ product.productID }}
-          </li>
-
-          <li>
-            Name: {{product.name}}
-          </li>
-
-          <li>
-            Price: {{product.price[0]['_']}} {{product.price[0]['$'].currency}}
-          </li>
-
-          <li>
-            <img src="{{product.imageURL}}" alt="">
-          </li>
-
-          <li>
-            Category: {{product.categories[0].category[0]['$'].path}}
-          </li>
-
-          <li>
-            ProductURL: {{product.productURL}}
-          </li>
-
-          <li>
-            Description: {{product.description}}
-          </li>
-        </ul>
-      </div>
-
-    </div>-->
   </div>
-
-</div>
+</section>
 
 
 
