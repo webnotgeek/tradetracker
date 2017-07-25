@@ -9,6 +9,7 @@
  - HTML5
  - CSS3
  - BOOTSTRAP 4
+ - NodeJS / express
  - Angular4/cli
  - SCSS
 
