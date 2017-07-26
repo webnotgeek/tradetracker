@@ -130,10 +130,19 @@
           background: #4e91ce;
           color: #fff;
           padding: 15px 30px 10px 30px;
+          @include media-breakpoint-down(lg){
+            padding: 15px;
+          }
           span {
             font-size: rem(32);
             display: block;
             font-weight: 500;
+            @include media-breakpoint-down(md){
+              font-size: rem(20);
+            }
+            @include media-breakpoint-down(lg){
+              font-size: rem(24);
+            }
           }
         }
       }
@@ -153,6 +162,15 @@
             color: rgba(0,0,0,0.8);
             strong {
               color: rgba(0,0,0,1);
+            }
+            a {
+              text-decoration: underline;
+              &:hover {
+                color: #4e91ce;
+                strong {
+                  color: #4e91ce;
+                }
+              }
             }
             &:last-child{
               border-bottom: none;

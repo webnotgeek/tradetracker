@@ -20,7 +20,7 @@
 <!-- product fetch -->
 <section class="container-fluid products" [ngClass]="{'fetched': fetched}">
   <div class="row">
-    <div class="products__item col-md-4" *ngFor="let product of products">
+    <div class="products__item  col-sm-12 col-md-6 col-lg-4" *ngFor="let product of products">
       <div>
         <div class="row">
           <div class="col-md-4 left">
@@ -37,7 +37,7 @@
               <li><strong>Product ID:</strong>{{ product.productID }}</li>
               <li><strong>Name: </strong>{{product.name}}</li>
               <li><strong>Category:</strong> {{product.categories[0].category[0]['$'].path}}</li>
-              <li><strong>ProductURL:</strong> {{product.productURL}}</li>
+              <li><a href="{{product.productURL}}" target="_blank"><strong>Product URL</strong></a> </li>
               <li><strong>Description:</strong> {{product.description}}</li>
             </ul>
           </div>
